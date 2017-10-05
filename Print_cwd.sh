@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Should probably make the "libexec" portion take user input && increase output to exe as well
+## Should probably make the "smpt" grep portion take user input && increase output to exe as well
 ## Also need to add user options and whether they want anything removing just to make lives easier
 
 # Stick processes output into array
