@@ -1,0 +1,8 @@
+# Look for potentially bad stuff that's compressed to hide mysterious things
+grep '((eval.*(base64_decode|gzinflate|\$_))|\$[0O]{4,}|FilesMan|JGF1dGhfc|IIIl|die\(PHP_OS|posix_getpwuid|Array\(base64_decode|document\.write\("\\u00|sh(3(ll|11)))' . -lroE --include=*.php*
+
+# Print out processes in a nicer format to compare its source to where it is actually sourced
+ps -Ao pid,comm,cmd,lstart
+
+# Deny those damn processes their CPU time
+pkill -U <user> -STOP || pkill -STOP -U <user> # Depeding on OS
