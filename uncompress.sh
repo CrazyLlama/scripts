@@ -12,8 +12,7 @@ API="<API-KEY-HERE>"
 alias find_evil="grep '((eval.*(base64_decode|gzinflate|\$_))|\$[0O]{4,}|FilesMan|JGF1dGhfc|IIIl|die\(PHP_OS|posix_getpwuid|Array\(base64_decode|document\.write\("\\u00|sh(3(ll|11)))' . -lroE --include=*.php*"
 array=( (find_evil) )
 
-# Base64 decode the files and output to raw zlib format, then prepend gzip header and uncompress
-
+# Send off to decode on unphp.net API
 for i in $array[@]; 
 do
   curl -i -F api_key=$API -F file=@$i http://www.unphp.net/api/v2/post > > /tmp/out.$i
