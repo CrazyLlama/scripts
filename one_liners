@@ -9,3 +9,6 @@ pkill -U <user> -STOP || pkill -STOP -U <user> # Depeding on OS
 
 # Decode and prepend gzip header on a raw file
 base64 -d file.b64 | printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" | cat - /tmp/zlib.raw | gzip -dc > /tmp/out.txt
+
+# Find all writable files/directories in the current directory for the current user - watch out for NFS UID mapping (or root-squashing)
+find . -writable
