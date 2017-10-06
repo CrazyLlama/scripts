@@ -2,9 +2,10 @@
 
 ## Need to add user input for file parsing or even pulling the needful out automatically
 ## For now it finds limited types of files and attempts to decode them
-
+##
 ## Example start of line: 
 ## `eval(gzuncompress(base64_decode('`
+##
 
 # Put API key here:
 API="<API-KEY-HERE>"
