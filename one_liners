@@ -6,3 +6,6 @@ ps -Ao pid,comm,cmd,lstart
 
 # Deny those damn processes their CPU time
 pkill -U <user> -STOP || pkill -STOP -U <user> # Depeding on OS
+
+# Decode and prepend gzip header on a raw file
+base64 -d file.b64 | printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" | cat - /tmp/zlib.raw | gzip -dc > /tmp/out.txt
