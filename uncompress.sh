@@ -16,10 +16,10 @@ array=( (find_evil) )
 # Send off to decode on unphp.net API
 for i in $array[@]; 
 do
-  curl -i -F api_key=$API -F file=@$i http://www.unphp.net/api/v2/post > > /tmp/out.$i
+  curl  -o /tmp/out.$i -i -F api_key=$API -F file=@$i http://www.unphp.net/api/v2/post
 done
 
 # What's it got?
-cat /tmp/out.txt
+cat /tmp/out.*
 
 echo "see /tmp/out.<filename> for full output"
