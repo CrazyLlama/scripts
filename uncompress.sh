@@ -20,6 +20,6 @@ do
 done
 
 # What's it got?
-cat /tmp/out.*
+ls -al /tmp/out.*
 
 echo "see /tmp/out.<filename> for full output"
