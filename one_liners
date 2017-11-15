@@ -12,3 +12,6 @@ base64 -d file.b64 | printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" | cat - /tmp/zlib
 
 # Find all writable files/directories in the current directory for the current user - watch out for NFS UID mapping (or root-squashing)
 find . -writable
+
+# Check what version of OSSEC/Wazuh is installed
+grep -E -R -i "ossec|wazuh" /var/ossec/queue/agent-info/* | sed -n -e 's/\(Windows.*- \|Linux.*-\) //p' | sed -n -e 's/^.*agent-info\///p' | sed -n -e 's/:/ /p' | sort -k2 | sort -k3 | cut -f1 -d"/"
