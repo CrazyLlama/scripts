@@ -3,8 +3,12 @@
 ## Should probably make the "smpt" grep portion take user input && increase output to exe as well
 ## Also need to add user options and whether they want anything removing just to make lives easier
 
+echo "Enter the string you would like to search the process list for:"
+
+read proc
+
 # Stick processes output into array
-array=( $(ps faux | grep smtp | grep -v root | awk '{print $2}' | sed 's/^/\/proc\//g') )
+array=( $(ps faux | grep $proc | grep -v root | awk '{print $2}' | sed 's/^/\/proc\//g') )
 
 # https://media.giphy.com/media/26DOs997h6fgsCthu/giphy.gif
 echo ${array[@]}
