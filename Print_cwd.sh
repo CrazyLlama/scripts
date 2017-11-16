@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-## Should probably make the "smpt" grep portion take user input && increase output to exe as well
-## Also need to add user options and whether they want anything removing just to make lives easier
+# By: The Magnificent Brett
+# Alias: ApproximatelyBee
+# Tweet me: @odin_the_mighty
+
+## To-do - add user options and whether they want anything stopping/killing
 
 echo "Enter the string you would like to search the process list for:"
 
@@ -13,7 +16,8 @@ proc_array=( $(ps faux | grep $proc | grep -v root | awk '{print $2}' | sed 's/^
 # Stick processes output into array - specifically the names of the processes
 array=( $(ps faux | grep $proc | grep -v root | awk '{ s = ""; for (i = 11; i <= NF; i++) s = s $i " "; print s }')
 
-# https://media.giphy.com/media/26DOs997h6fgsCthu/giphy.gif
+## https://media.giphy.com/media/26DOs997h6fgsCthu/giphy.gif ##
+
 echo ""
 echo "Applicable processes:"
 echo ${array[@]}
