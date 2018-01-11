@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+set -x
+
 proc_array=( $(ps faux | awk '{print $2}' | grep -v "PID") )
 
 for i in ${proc_array[@]};
