@@ -1,4 +1,4 @@
-#!/usr/env bash
+#!/usr/bin/env bash
 
 proc_array=( $(ps faux | awk '{print $2}' | grep -v "PID") )
 
