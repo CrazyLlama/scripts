@@ -8,7 +8,7 @@ Should be no outputs other than what is generated in the sqlite session.
 .EXAMPLE
 .\sqlite.ps1 - _Runs the script_
 
-.NOTE
+.NOTES
 Underscores denote sarcasm
 #>
 
