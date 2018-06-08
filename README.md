@@ -1,3 +1,3 @@
 # scripts
 
-Just some crappy ol' scripts I've cobbled together over time :)
+Just some ol' scripts I've used, cobbled together, or found and needed a place to stick 'em :)
